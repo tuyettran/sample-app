@@ -1,4 +1,5 @@
 en:
+  activation_message: "Account not activated, check your email for activation link!"
   layouts:
     header:
       home: "Home"
@@ -61,6 +62,7 @@ en:
     create:
       welcome: "Welcome to the Sample App!"
       has_error: "Oops!! There are something wrong, can not create accout"
+      please_check_mail: "Please check your email to activate your account."
     edit:
       edit_user: "Edit user"
       update_profile: "Update your profile"
@@ -95,3 +97,15 @@ en:
       remember_me: "Remember me on this computer"
     create:
       invalid: "Invalid email/password combination"
+  user_mailer:
+    activate: "Activate"
+    sample_app: "Sample app"
+    hi: "Hi "
+    activation: "Account activation"
+    reset_password: "reset password"
+    account_activation:
+      check: "Click on the link below to activate your account:"
+  account_activations:
+    edit:
+      activated: "Your account activated!"
+      invalid_link: "Invalid activation link! please check email again!"
