@@ -166,6 +166,20 @@ select,
   width: 100%;
 }
 
+.checkbox {
+  margin: -10px 0 10px;
+
+  span {
+    font-weight: normal;
+    margin-left: 20px;
+  }
+}
+
+.session-remember-me {
+  margin-left: 0;
+  width: auto;
+}
+
 input {
   height: auto;
 }
