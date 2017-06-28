@@ -13,6 +13,9 @@ en:
       contact: "Contact"
       news: "News"
       title: "Ruby on Rails Tutorial Simple App"
+    application:
+      base_title: "Ruby on Rails Tutorial Sample App"
+      welcome: "Welcome to the Sample App!"
   static_pages:
     about:
       about: "About"
@@ -47,3 +50,12 @@ en:
     new:
       sign_up: "Sign up"
       intro: "This will be a signup page for new users."
+      pass_confirm: "Confirmation"
+      create: "Create my account"
+    create:
+      welcome: "Welcome to the Sample App!"
+      has_error: "Oh, can not create accout, there are something wrong!"
+  shared:
+    error_messages:
+      form_contains: "The form contains "
+      error: "error"
