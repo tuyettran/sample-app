@@ -16,6 +16,7 @@ class UsersController < ApplicationController
 
     if @user.save
       flash[:success] = t ".welcome"
+      log_in @user
       redirect_to @user
     else
       flash.now[:warning] = t ".has_error"
@@ -31,7 +32,6 @@ class UsersController < ApplicationController
   end
 
   def find_user
-    user = User.find_by id: params[:id]
-    user.nil? ? nil : user
+    User.find_by id: params[:id]
   end
 end

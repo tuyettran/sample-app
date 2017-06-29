@@ -5,6 +5,12 @@ en:
       login: "login"
       help: "Help"
       app: "sample app"
+      log_in: "Log in"
+      log_out: "Log out"
+      profile: "Profile"
+      setting: "Setting"
+      user: "Users"
+      account: "Account "
     footer:
       the: "The "
       by: "by "
@@ -59,3 +65,12 @@ en:
     error_messages:
       form_contains: "The form contains "
       error: "error"
+  sessions:
+    new:
+      header: "Log in"
+      log_in: "Log in"
+      new_user: "New user? "
+      sign_up: "Sign up now!"
+      title: "Log in"
+    create:
+      invalid: "Invalid email/password combination"
