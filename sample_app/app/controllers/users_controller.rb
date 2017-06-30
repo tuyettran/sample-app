@@ -1,14 +1,8 @@
 class UsersController < ApplicationController
+  before_action :load_user, only: :show
+
   def new
     @user = User.new
-  end
-
-  def show
-    if find_user.nil?
-      render file: "public/404.html", status: :not_found
-    else
-      @user = find_user
-    end
   end
 
   def create
@@ -24,6 +18,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+  end
+
   private
 
   def user_params
@@ -31,7 +28,9 @@ class UsersController < ApplicationController
       :password_confirmation
   end
 
-  def find_user
-    User.find_by id: params[:id]
+  def load_user
+    @user = User.find_by id: params[:id]
+    return @user if @user.present?
+    render file: "public/404.html", status: :not_found
   end
 end
