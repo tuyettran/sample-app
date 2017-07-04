@@ -60,7 +60,27 @@ en:
       create: "Create my account"
     create:
       welcome: "Welcome to the Sample App!"
-      has_error: "Oh, can not create accout, there are something wrong!"
+      has_error: "Oops!! There are something wrong, can not create accout"
+    edit:
+      edit_user: "Edit user"
+      update_profile: "Update your profile"
+      confirm: "Confirmation"
+      save_changes: "Save changes"
+      change: "change"
+      please_login: "Please log in"
+      permission: "Trying to edit profile of other user"
+    update:
+      profile_updated: "Profile updated"
+      update_has_error: "Oops!! There are something wrong, can not update user"
+    index:
+      please_login: "Please log in"
+      all_users: "All users"
+    user:
+      sure: "You sure?"
+    destroy:
+      user_deleted: "User deleted"
+      delete: "delete"
+      warning_delete: "Oops!! There are something wrong, can not delete user"
   shared:
     error_messages:
       form_contains: "The form contains "

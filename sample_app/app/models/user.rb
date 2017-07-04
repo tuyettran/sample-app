@@ -1,7 +1,8 @@
 class User < ApplicationRecord
   attr_accessor :remember_token
-
   before_save :downcase_email
+
+  scope :order_name, ->{order name: :asc}
 
   validates :name, presence: true,
     length: {maximum: Settings.user.max_length_name}
@@ -11,7 +12,7 @@ class User < ApplicationRecord
     format: {with: VALID_EMAIL_REGEX},
     uniqueness: {case_sensitive: false}
   validates :password, presence: true,
-    length: {minimum: Settings.user.min_length_password}
+    length: {minimum: Settings.user.min_length_password}, allow_nil: true
 
   has_secure_password
 
@@ -43,5 +44,9 @@ class User < ApplicationRecord
 
   def forget
     update_attributes remember_digest: nil
+  end
+
+  def current_user? user
+    self == user
   end
 end

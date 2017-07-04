@@ -3,6 +3,16 @@ module SessionsHelper
     session[:user_id] = user.id
   end
 
+  def logged_in?
+    current_user.present?
+  end
+
+  def forget user
+    user.forget
+    cookies.delete :user_id
+    cookies.delete :remember_token
+  end
+
   def current_user
     if user_id = session[:user_id]
       @current_user ||= User.find_by id: user_id
@@ -13,16 +23,6 @@ module SessionsHelper
         @current_user = user
       end
     end
-  end
-
-  def logged_in?
-    current_user.present?
-  end
-
-  def forget user
-    user.forget
-    cookies.delete :user_id
-    cookies.delete :remember_token
   end
 
   def log_out
