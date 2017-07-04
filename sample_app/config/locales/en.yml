@@ -95,6 +95,7 @@ en:
       sign_up: "Sign up now!"
       title: "Log in"
       remember_me: "Remember me on this computer"
+      forgot_password: " (Forgot password? )"
     create:
       invalid: "Invalid email/password combination"
   user_mailer:
@@ -102,10 +103,36 @@ en:
     sample_app: "Sample app"
     hi: "Hi "
     activation: "Account activation"
+    password_reset: "Password reset"
     reset_password: "reset password"
     account_activation:
       check: "Click on the link below to activate your account:"
+    password_reset:
+      ignore_to_keep_old_password: "If you did not request your \
+        password to be reset, please ignore this email and your \
+        password will stay as it is."
+      expire in two hours: "This link will expire in two hours."
+      reset_password: "Reset password"
+      click_link: "To reset your password click the link below:"
+      password_reset: "Password reset"
   account_activations:
     edit:
       activated: "Your account activated!"
       invalid_link: "Invalid activation link! please check email again!"
+  password_resets:
+    new:
+      forgot_password: "Forgot password"
+      submit: "Submit"
+    create:
+      email_sent: "Email sent with password reset instructions"
+      email_not_found: "Email address not found"
+    edit:
+      update_password: "Update password"
+      password_reset_expired: "Password reset has expired."
+      not_valid_user: "Oops!! There are something wrong, \
+        please check your email again!"
+      confirm: "Confirmation"
+    update:
+      can_not_empty: "Password can not empty!!!"
+      password_reseted: "Password has been reset"
+      not_found: "User not found"
