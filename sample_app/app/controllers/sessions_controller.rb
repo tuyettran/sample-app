@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       if user.is_activated?
         log_in user
         "1" == params[:session][:remember_me] ? remember(user) : forget(user)
-        redirect_to user
+        redirect_back_or user
       else
         flash[:warning] = t ".activation_message"
         redirect_to root_url
