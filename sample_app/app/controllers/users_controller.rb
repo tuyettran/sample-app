@@ -77,7 +77,7 @@ class UsersController < ApplicationController
   end
 
   def verify_admin!
-    return if current_user.admin?
+    return if current_user.is_admin?
     flash[:warning] = t ".is_not_admin"
     redirect_to login_url
   end

@@ -2,8 +2,8 @@ User.create! name: "Example User",
   email: "example@railstutorial.org",
   password: "foobar",
   password_confirmation: "foobar",
-  admin: true,
-  activated: true,
+  is_admin: true,
+  is_activated: true,
   activated_at: Time.zone.now
 
 20.times do |n|
@@ -14,6 +14,6 @@ User.create! name: "Example User",
     email: email,
     password: password,
     password_confirmation: password,
-    activated: true,
+    is_activated: true,
     activated_at: Time.zone.now
 end
