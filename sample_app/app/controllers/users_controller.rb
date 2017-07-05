@@ -5,8 +5,8 @@ class UsersController < ApplicationController
   before_action :verify_admin!, only: :destroy
 
   def index
-    @users = User.select(:id, :name, :email).order_name.paginate page: params[:page],
-      per_page: Settings.per_page
+    @users = User.select(:id, :name, :email)
+      .order_name.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def new
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
     if @user.save
       @user.send_activation_email
       flash[:info] = t ".please_check_mail"
-      redirect_to root_url
+      redirect_back_or root_url
     else
       flash.now[:warning] = t ".has_error"
       render :new
@@ -27,6 +27,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @microposts =
+      @user.microposts.paginate page: params[:page], per_page: Settings.per_page
   end
 
   def edit
@@ -62,12 +64,6 @@ class UsersController < ApplicationController
     @user = User.find_by id: params[:id]
     return if @user
     render file: "public/404.html", status: :not_found
-  end
-
-  def logged_in_user
-    return if logged_in?
-    flash[:danger] = t ".please_login"
-    redirect_to login_url
   end
 
   def correct_user
