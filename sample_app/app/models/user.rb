@@ -1,10 +1,13 @@
 class User < ApplicationRecord
   attr_accessor :remember_token, :activation_token, :reset_token
 
+  has_many :microposts, dependent: :destroy
+
   before_save :downcase_email
   before_create :create_activation_digest
 
-  scope :order_name, ->{order name: :asc}
+  scope :sort, ->{order(name: :asc).where(is_activated: true)
+    .select :id, :name, :email}
 
   validates :name, presence: true,
     length: {maximum: Settings.user.max_length_name}
