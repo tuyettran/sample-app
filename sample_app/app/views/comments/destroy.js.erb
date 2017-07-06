@@ -1,0 +1,3 @@
+$('#comment-<%= @comment.id%>').closest('div').fadeOut();
+$(".number-comments")
+  .html("<%= escape_javascript(render("comments/number_comments",post: @post)) %>");

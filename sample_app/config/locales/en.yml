@@ -58,6 +58,8 @@ en:
       sign_up: "Sign up now!"
       micropost_feed: "Micropost feed"
   users:
+    following:
+      following: "Following"
     follow:
       follow: "Follow"
     unfollow:
@@ -104,7 +106,7 @@ en:
     error_messages:
       form_contains: "The form contains "
       error: "error"
-    micropost_form:
+    post_form:
       post: "Post"
     user_info:
       profile: See my profile
@@ -161,15 +163,35 @@ en:
       can_not_empty: "Password can not empty!!!"
       password_reseted: "Password has been reset"
       not_found: "User not found"
-  microposts:
-    micropost:
+  posts:
+    post:
+      title: "title"
+      content: "content"
       posted: "Posted"
+      post: "Post"
       ago: " ago."
       delete: "Delete"
       sure: "You sure?"
+      comment: "Comments(%{number_comments})"
     create:
       micropost_created: "Micropost created!"
       too_big_file: "Image file should be less than 5MB"
     destroy:
       deleted: "Micropost deleted!"
       has_error: "Oops!! There are something wrong, can not delete micropost"
+  comments:
+    cant_comment: "You are not following this user and can not comment his/her posts."
+    commented: "Commented "
+    ago: " ago."
+    comment_updated: "Comment updated!"
+    comment_form:
+      comment: "Create comment"
+      placeholder: "Enter comment"
+    destroy:
+      deleted: "Comment deleted!"
+      has_error: "Oops!! There are something wrong, can not delete comment"
+    comment:
+      sure: You sure?
+    update: "Update"
+    edit:
+      has_error: "Oops!! You can not update or delete comment of other user"

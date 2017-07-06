@@ -9,7 +9,7 @@
     </section>
 
     <section class="stats">
-      <%= render "shared/stats" %>
+      <%= render "shared/stats",user: @user %>
 
       <% if @users.any? %>
         <div class="user_avatars">

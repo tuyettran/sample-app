@@ -1,0 +1,26 @@
+<li id="micropost-<%= post.id %>">
+  <%= link_to gravatar_for(post.user, size: Settings.gravatar.index_size),
+    post.user %>
+  <span class="user"><%= link_to post.user.name, post.user %></span>
+  <span class="content">
+    <h3><%= link_to post.title, post %></h3>
+    <p><%= post.content.html_safe %></p>
+    <% if post.pictures? %>
+      <%= image_tag post.pictures.url, width: Settings.gravatar.post_show_size %>
+    <% end %>
+  </span>
+  <span class="timestamp col-md-offset-3">
+    <%= post.created_at %>
+    <span class = "number-comments">
+      <%= render "comments/number_comments", post: post%>
+    </span>
+    <% if current_user && current_user.current_user?(post.user) %>
+      <%= link_to t(".delete"), post, method: :delete,
+        data: {confirm: t(".sure")} %>
+    <% end %>
+  </span>
+  <span class="list-comments-<%= post.id %>">
+    <%= render post.comments.last(3), post: post %>
+  </span>
+  <%= render "comments/comment_form", post: post, comment: @comment %>
+</li>

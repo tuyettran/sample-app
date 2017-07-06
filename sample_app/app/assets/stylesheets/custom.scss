@@ -259,10 +259,11 @@ input {
 .microposts {
   list-style: none;
   padding: 0;
+  margin-bottom: 10px;
 
   li {
     border-top: 1px solid $gray;
-    padding: 10px 0;
+    padding: 10px 0 10px;
   }
 
   .user {
@@ -280,16 +281,24 @@ input {
     }
   }
 
-  .timestamp {
-    color: $light-gray;
-    display: block;
-    margin-left: 60px;
-  }
-
   .gravatar {
     float: left;
     margin: 5px 10px 0;
   }
+}
+
+.comment {
+  padding: 10px;
+  border-top: 1px solid $gray;
+}
+
+.submit-comment {
+  width: auto;
+}
+
+.timestamp {
+  color: $light-gray;
+  padding-bottom: 15px;
 }
 
 aside {

@@ -1,0 +1,4 @@
+$(".list-comments-" + "<%= @post.id %>")
+.append("<%= escape_javascript(render("comments/comment",comment: @comment, post: @post)) %>");
+$(".number-comments")
+  .html("<%= escape_javascript(render("comments/number_comments",post: @post)) %>");

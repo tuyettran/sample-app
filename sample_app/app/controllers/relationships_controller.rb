@@ -10,6 +10,7 @@ class RelationshipsController < ApplicationController
       respond_to do |format|
         format.html{redirect_to @user}
         format.js
+      end
     else
       flash[:warning] = t ".has_error"
       redirect_to request.referrer || root_url
@@ -19,12 +20,13 @@ class RelationshipsController < ApplicationController
   def destroy
     @user = Relationship.find_by(id: params[:id]).followed
 
-    render file: "public/404.html" unless user
+    render file: "public/404.html" unless @user
 
-    if current_user.unfollow user
+    if current_user.unfollow @user
       respond_to do |format|
         format.html{redirect_to @user}
         format.js
+      end
     else
       flash[:warning] = t ".has_error"
       redirect_to request.referrer || root_url
