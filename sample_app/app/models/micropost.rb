@@ -2,7 +2,8 @@ class Micropost < ApplicationRecord
   belongs_to :user
 
   scope :order_desc, ->{order created_at: :desc}
-  scope :feed, ->id{(where "user_id = ?", id).order_desc}
+  scope :feed_by_following, lambda{|user_id, following_ids|
+    where("user_id = ? OR user_id IN (?)", user_id, following_ids).order_desc}
 
   mount_uploader :picture, PictureUploader
 
@@ -15,6 +16,6 @@ class Micropost < ApplicationRecord
 
   def picture_size
     errors.add :picture, I18n.t("too_big_file") if
-      picture.size > Settings.micropost.image_max_size.megabytes
+      picture.size > Settings.image_upload.max_size.megabytes
   end
 end

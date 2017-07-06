@@ -1,0 +1,9 @@
+<% user ||= current_user %>
+<div class="stats">
+  <%= link_to t("shared.stats.number_following",
+    number_following: number_following(user)),
+    following_user_path(user) %>
+  <%= link_to t("shared.stats.number_follower",
+    number_followers: number_followers(user)),
+    followers_user_path(user) %>
+</div>

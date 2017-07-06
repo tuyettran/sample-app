@@ -58,6 +58,10 @@ en:
       sign_up: "Sign up now!"
       micropost_feed: "Micropost feed"
   users:
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
     new:
       sign_up: "Sign up"
       intro: "This will be a signup page for new users."
@@ -69,6 +73,8 @@ en:
       please_check_mail: "Please check your email to activate your account."
     show:
       microposts: "Microposts"
+      following: "Following"
+      followers: "Followers"
     edit:
       edit_user: "Edit user"
       update_profile: "Update your profile"
@@ -89,6 +95,11 @@ en:
       user_deleted: "User deleted"
       delete: "delete"
       warning_delete: "Oops!! There are something wrong, can not delete user"
+    show_follow:
+      microposts: "Microposts"
+      profile: "See my profile"
+    followers:
+      follower: "Folowers"
   shared:
     error_messages:
       form_contains: "The form contains "
@@ -98,6 +109,9 @@ en:
     user_info:
       profile: See my profile
       micropost: micropost
+    stats:
+      number_following: "%{number_following} following"
+      number_follower: "%{number_followers} followers"
   sessions:
     new:
       header: "Log in"
