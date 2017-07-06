@@ -1,4 +1,6 @@
 en:
+  please_login: "Please log in"
+  too_big_file: "Maximum file size is 5MB. Please choose a smaller file."
   activation_message: "Account not activated, check your email for activation link!"
   layouts:
     header:
@@ -24,6 +26,7 @@ en:
       base_title: "Ruby on Rails Tutorial Sample App"
       welcome: "Welcome to the Sample App!"
   static_pages:
+    too_big_file: "Maximum file size is 5MB. Please choose a smaller file."
     about:
       about: "About"
       title: "Ruby on Rails Tutorial Simple App"
@@ -53,6 +56,7 @@ en:
       tut: "Ruby on Rails Tutorial"
       app: "sample application."
       sign_up: "Sign up now!"
+      micropost_feed: "Micropost feed"
   users:
     new:
       sign_up: "Sign up"
@@ -63,6 +67,8 @@ en:
       welcome: "Welcome to the Sample App!"
       has_error: "Oops!! There are something wrong, can not create accout"
       please_check_mail: "Please check your email to activate your account."
+    show:
+      microposts: "Microposts"
     edit:
       edit_user: "Edit user"
       update_profile: "Update your profile"
@@ -87,6 +93,11 @@ en:
     error_messages:
       form_contains: "The form contains "
       error: "error"
+    micropost_form:
+      post: "Post"
+    user_info:
+      profile: See my profile
+      micropost: micropost
   sessions:
     new:
       header: "Log in"
@@ -136,3 +147,15 @@ en:
       can_not_empty: "Password can not empty!!!"
       password_reseted: "Password has been reset"
       not_found: "User not found"
+  microposts:
+    micropost:
+      posted: "Posted"
+      ago: " ago."
+      delete: "Delete"
+      sure: "You sure?"
+    create:
+      micropost_created: "Micropost created!"
+      too_big_file: "Image file should be less than 5MB"
+    destroy:
+      deleted: "Micropost deleted!"
+      has_error: "Oops!! There are something wrong, can not delete micropost"
