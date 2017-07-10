@@ -5,8 +5,11 @@ user:
 gravatar:
   size: 80
   index_size: 50
+  follow_size: 30
 expired_time: 2
 per_page: 5
 micropost:
   length_max: 140
-  image_max_size: 5
+image_upload:
+  type: "image/jpeg,image/gif,image/png"
+  max_size: 5

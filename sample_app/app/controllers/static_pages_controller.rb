@@ -5,7 +5,8 @@ class StaticPagesController < ApplicationController
     if valid_page?
       if logged_in?
         @micropost = current_user.microposts.build
-        @feed_items = current_user.microposts.feed(current_user.id)
+        @feed_items = Micropost.feed_by_following(
+          current_user.id, current_user.following.ids)
           .paginate page: params[:page], per_page: Settings.per_page
       end
       render template: "static_pages/#{params[:pages]}"

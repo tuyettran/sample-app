@@ -26,7 +26,7 @@ class UsersController < ApplicationController
   end
 
   def show
-    @microposts = @user.microposts
+    @microposts = @user.microposts.order_desc
       .paginate page: params[:page], per_page: Settings.per_page
   end
 
@@ -50,6 +50,24 @@ class UsersController < ApplicationController
       flash[:warning] = t ".delete_warning"
     end
     redirect_to users_path
+  end
+
+  def following
+    @title = t ".following"
+    @users = @user.following
+      .paginate page: params[:page], per_page: Settings.per_page
+    render "show_follow"
+  end
+
+  def followers
+    @title = t ".follower"
+    @user= User.find_by id: params[:id]
+
+    render file: "public/404.html" unless @user
+
+    @users = @user.followers
+      .paginate page: params[:page], per_page: Settings.per_page
+    render "show_follow"
   end
 
   private
