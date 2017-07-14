@@ -1,0 +1,3 @@
+$('.micropost-<%= @post.id %>').closest('li').fadeOut();
+$('.number_microposts')
+  .html('<%= pluralize number_microposts(current_user)+1, t("users.show.microposts") %>');

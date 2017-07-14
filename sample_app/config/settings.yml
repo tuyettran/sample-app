@@ -11,7 +11,7 @@ gravatar:
 expired_time: 2
 per_page: 5
 micropost:
-  length_max: 600
+  length_max: 2000
   title_max: 100
 comment:
   length_max: 120

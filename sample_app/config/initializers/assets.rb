@@ -9,6 +9,7 @@ Rails.application.config.assets.precompile += %w( upload_file.js )
 Rails.application.config.assets.precompile += %w( cable.js )
 Rails.application.config.assets.precompile += %w(ckeditor/config.js)
 Rails.application.config.assets.precompile += %w( ckeditor/* )
+Rails.application.config.assets.precompile += %w( bootstrap.js )
 # Add additional assets to the asset load path
 # Rails.application.config.assets.paths << Emoji.images_path
 

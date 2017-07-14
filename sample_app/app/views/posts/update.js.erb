@@ -1,0 +1,10 @@
+<% if @post.errors.any? %>
+  $('.show-errors').html('');
+  <% @post.errors.full_messages.each do |message| %>
+    $('.show-errors').append('<li><%= message %></li>');
+  <% end %>
+<% else %>
+  $('#post-<%= @post.id %>').modal('toggle');
+  $('.post-content[data-id=<%= @post.id %>]')
+    .html("<%= escape_javascript(render("posts/update", post: @post)) %>");
+<% end %>

@@ -1,0 +1,23 @@
+<div class="modal fade" id="post-<%= post.id %>" tabindex="-1"
+   role="dialog" aria-labelledby="post-<%= post.id %>-label" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-body">
+        <%= form_for post, remote: true do |f| %>
+          <div class="show-errors error-explanation"></div>
+          <div class="field edit-post">
+            <%= f.text_field :title, class: "form-control" %>
+            <%= f.text_area :content, class: "ckeditor"%>
+          </div>
+          <div><%= f.submit t("posts.post"), class: "btn edit-post-btn" %></div>
+          <span class = "picture">
+            <%= f.file_field :pictures, accept: Settings.image_upload.type %>
+          </span>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn" data-dismiss="modal"><%= t ".close" %></button>
+      </div>
+    </div>
+  </div>
+</div>

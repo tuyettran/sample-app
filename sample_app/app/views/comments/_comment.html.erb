@@ -7,9 +7,11 @@
   <span class="timestamp col-md-offset-2">
     <%= comment.created_at %>
     <% if current_user && current_user.current_user?(comment.user) %>
-      <%= link_to t(".edit"), edit_post_comment_path(post, comment), remote: true %> |
-      <%= link_to t(".delete"), post_comment_path(post, comment), method: :delete,
-        data: {confirm: t(".sure")}, remote: true, class: "user-delete" %>
+      <%= link_to t(".edit"), edit_post_comment_path(post, comment),
+        remote: true, class: "edit-comment" %> |
+      <%= link_to t(".delete"), post_comment_path(post, comment),
+        method: :delete, data: {confirm: t(".sure")}, remote: true,
+          class: "user-delete" %>
     <% end %>
   </span>
 </div>

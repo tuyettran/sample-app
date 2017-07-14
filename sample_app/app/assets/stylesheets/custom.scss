@@ -287,25 +287,30 @@ input {
   }
 }
 
+.post-form {
+  margin: 20px;
+}
+
+.edit-post {
+  height: auto
+}
+
 .comment {
   padding: 10px;
   border-top: 1px solid $gray;
 }
 
-.submit-comment {
-  width: auto;
+.submit-comment{
+  display: none;
+}
+
+.update-comment {
+  display: none;
 }
 
 .timestamp {
   color: $light-gray;
   padding-bottom: 15px;
-}
-
-aside {
-  textarea {
-    height: 100px;
-    margin-bottom: 5px;
-  }
 }
 
 span.picture {

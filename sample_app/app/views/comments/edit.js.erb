@@ -1,2 +1,4 @@
-$('.content-comment[data-id=<%= @comment.id %>]')
+$('.edit-comment').bind('ajax:success', function(){
+  $('.content-comment[data-id=<%= @comment.id %>]')
 .html("<%= escape_javascript(render("comments/form_edit", comment: @comment)) %>");
+});

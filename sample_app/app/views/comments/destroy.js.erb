@@ -1,3 +1,5 @@
-$('#comment-<%= @comment.id%>').closest('div').fadeOut();
-$(".number-comments")
-  .html("<%= escape_javascript(render("comments/number_comments",post: @post)) %>");
+$('.user-delete').bind('ajax:success', function(){
+  $('#comment-<%= @comment.id%>').closest('div').fadeOut();
+  $(".number-comments")
+    .html("<%= escape_javascript(render("comments/number_comments",post: @post)) %>");
+});

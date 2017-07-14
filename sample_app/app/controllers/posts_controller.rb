@@ -1,18 +1,20 @@
 class PostsController < ApplicationController
-  before_action :logged_in_user, only: [:create, :destroy]
+  before_action :logged_in_user, except: :show
   before_action :load_post, except: :create
-  before_action :correct_user, only: :destroy
+  before_action :correct_user, only: [:destroy, :edit, :update]
 
   def create
     @post = current_user.posts.build post_params
-    @comment = Comment.new
     if @post.save
-      flash[:success] = t ".micropost_created"
-      redirect_to root_url
+      respond_to do |format|
+        format.html
+        format.js
+      end
     else
-      @feed_items = current_user.posts.order_desc
-        .paginate page: params[:page], per_page: Settings.per_page
-      render "static_pages/home"
+      respond_to do |format|
+        format.html{redirect_to :back}
+        format.js{}
+      end
     end
   end
 
@@ -22,19 +24,37 @@ class PostsController < ApplicationController
       .paginate page: params[:page], per_page: Settings.per_page
   end
 
+  def edit
+  end
+
+  def update
+    respond_to do |format|
+      if @post.update_attributes post_params
+        format.html{redirect_to :back}
+        format.js
+      else
+        format.html{redirect_to :back}
+        format.js{}
+      end
+    end
+  end
+
   def destroy
     if @post.destroy
-      flash[:success] = t ".deleted"
+      respond_to do |format|
+        format.html{redirect_to request.referrer || root_url}
+        format.js{}
+      end
     else
       flash[:danger] = t ".has_error"
+      redirect_to request.referrer || root_url
     end
-    redirect_to request.referrer || root_url
   end
 
   private
 
   def post_params
-    params.require(:post).permit :title, :content, :pictures, :pictures_cache
+    params.require(:post).permit :title, :content, :pictures
   end
 
   def correct_user
