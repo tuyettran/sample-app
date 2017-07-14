@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  mount Ckeditor::Engine => '/ckeditor'
   root "static_pages#show", pages: "home"
   get "static_pages/*pages", to: "static_pages#show"
   get "/signup", to: "users#new"
@@ -15,6 +16,8 @@ Rails.application.routes.draw do
   end
   resources :account_activations, only: :edit
   resources :password_resets, except: [:index, :show, :destroy]
-  resources :microposts, only: [:create, :destroy]
+  resources :posts, only: [:create, :show, :destroy] do
+    resources :comments, except: [:index, :new, :show]
+  end
   resources :relationships, only: [:create, :destroy]
 end

@@ -21,8 +21,16 @@ end
 users = User.order(:created_at).take 6
 
 10.times do
-  content = Faker::Lorem.sentence 5
-  users.each{|user| user.microposts.create! content: content}
+  content = Faker::Lorem.paragraph paragraph_count = 10, supplemental = false
+  title = Faker::Lorem.sentence
+  users.each{|user| user.posts.create! title: title, content: content}
+end
+
+100.times do |index|
+  content = Faker::Lorem.sentence
+  Comment.create content: content,
+    post_id: Random.rand(1..50),
+    user_id: Random.rand(1..21)
 end
 
 users = User.all

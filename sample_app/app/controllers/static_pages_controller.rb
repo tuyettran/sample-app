@@ -4,10 +4,11 @@ class StaticPagesController < ApplicationController
   def show
     if valid_page?
       if logged_in?
-        @micropost = current_user.microposts.build
-        @feed_items = Micropost.feed_by_following(
+        @post = current_user.posts.build
+        @feed_items = Post.feed_by_following(
           current_user.id, current_user.following.ids)
           .paginate page: params[:page], per_page: Settings.per_page
+        @comment = current_user.comments.build
       end
       render template: "static_pages/#{params[:pages]}"
     else

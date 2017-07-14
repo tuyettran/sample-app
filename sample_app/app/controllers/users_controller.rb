@@ -26,8 +26,10 @@ class UsersController < ApplicationController
   end
 
   def show
-    @microposts = @user.microposts.order_desc
+    @posts = @user.posts.order_desc
       .paginate page: params[:page], per_page: Settings.per_page
+    @relationship = Relationship.new
+    @comment = current_user.comments.build
   end
 
   def edit

@@ -1,0 +1,4 @@
+<% if post.comments.any? %>
+  <%= link_to t("posts.post.comment",
+    number_comments: post.comments.count), post %>
+<% end %>

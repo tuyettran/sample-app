@@ -5,11 +5,16 @@ user:
 gravatar:
   size: 80
   index_size: 50
+  post_show_size: 500
   follow_size: 30
+  post_size: 1000
 expired_time: 2
 per_page: 5
 micropost:
-  length_max: 140
+  length_max: 600
+  title_max: 100
+comment:
+  length_max: 120
 image_upload:
   type: "image/jpeg,image/gif,image/png"
   max_size: 5

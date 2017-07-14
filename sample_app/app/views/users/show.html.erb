@@ -18,9 +18,9 @@
         <%= t ".microposts" %>(<%= number_microposts @user %>)
       </h3>
       <ol class="microposts">
-        <%= render @microposts %>
+        <%= render @posts %>
       </ol>
-      <%= will_paginate @microposts %>
+      <%= will_paginate @posts %>
     <% end %>
   </div>
 </div>
