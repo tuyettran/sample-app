@@ -1,0 +1,7 @@
+<span class="post-content", data-id="<%= post.id %>">
+  <h3><%= link_to post.title, post %></h3>
+  <p><%= sanitize post.content %></p>
+  <% if post.pictures? %>
+    <%= image_tag post.pictures.url, width: Settings.gravatar.post_show_size %>
+  <% end %>
+</span>

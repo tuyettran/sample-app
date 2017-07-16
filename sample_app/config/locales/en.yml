@@ -171,16 +171,24 @@ en:
       post: "Post"
       ago: " ago."
       delete: "Delete"
+      edit: "Edit"
       sure: "You sure?"
       comment: "Comments(%{number_comments})"
     create:
       micropost_created: "Micropost created!"
       too_big_file: "Image file should be less than 5MB"
+    edit:
+    update:
+      post_updated: "Post updated"
+      update_has_error: "Oops!! There are something wrong, \
+        can not update micropost"
     destroy:
       deleted: "Micropost deleted!"
-      has_error: "Oops!! There are something wrong, can not delete micropost"
+      has_error: "Oops!! There are something wrong, \
+        can not delete micropost"
   comments:
-    cant_comment: "You are not following this user and can not comment his/her posts."
+    cant_comment: "You are not following this user and \
+      can not comment his/her posts."
     commented: "Commented "
     ago: " ago."
     comment_updated: "Comment updated!"

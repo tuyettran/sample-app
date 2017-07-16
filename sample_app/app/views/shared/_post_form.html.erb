@@ -1,16 +1,13 @@
-<%= form_for post, html: {data:{max_size: Settings.image_upload.
-  max_size}} do |f| %>
-  <%= render "shared/error_messages", object: f.object %>
-  <div class="field">
-    <%= f.text_field :title, placeholder: t("posts.post.title"), class: "form-control" %>
-    <%= f.text_area :content, placeholder: t("posts.post.content"), id: "ckeditor"%>
+<%= form_for post, remote: true do |f| %>
+  <div class="show-errors-create error-explanation"><ul></ul></div>
+  <div class="field post-form">
+    <%= f.text_field :title, placeholder: t("posts.post.title"),
+      class: "form-control post-title" %>
+    <%= f.text_area :content, placeholder: t("posts.post.content"),
+      class: "ckeditor post-content"%>
   </div>
   <div><%= f.submit t("posts.post"), class: "btn btn-primary" %></div>
   <span class = "picture">
     <%= f.file_field :pictures, accept: Settings.image_upload.type %>
-    <%= f.hidden_field :pictures_cache %>
   </span>
 <% end %>
-<script type="text/javascript">
-  CKEDITOR.replace('ckeditor');
-</script>

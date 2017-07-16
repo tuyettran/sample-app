@@ -1,0 +1,10 @@
+<% if @post.errors.any? %>
+  $('.show-errors-create').html('');
+  <% @post.errors.full_messages.each do |message| %>
+    $('.show-errors-create').append('<li><%= message %></li>');
+  <% end %>
+<% else %>
+  $('.microposts').prepend('<%= j render('posts/post', post: @post) %>');
+  $('.show-errors-create').html('');
+  $('.post-title').val('');
+<% end %>
