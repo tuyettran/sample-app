@@ -1,4 +1,6 @@
 class Post < ApplicationRecord
+  include ActionView::Helpers::SanitizeHelper
+
   belongs_to :user
   has_many :comments, dependent: :destroy
 
@@ -14,11 +16,16 @@ class Post < ApplicationRecord
   validates :title, presence: true,
     length: {maximum: Settings.micropost.title_max}
   validate :picture_size
+  validate :content_not_blank
 
   private
 
   def picture_size
     errors.add :pictures, I18n.t("too_big_file") if
       pictures.size > Settings.image_upload.max_size.megabytes
+  end
+
+  def content_not_blank
+    errors.add :content, I18n.t(".content_not_blank") if strip_tags(content).blank?
   end
 end

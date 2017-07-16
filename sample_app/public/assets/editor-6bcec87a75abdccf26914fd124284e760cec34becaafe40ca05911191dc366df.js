@@ -1,0 +1,1 @@
+$(document).ready(function(){if($("textarea").length>0){var e=$("ckeditor");$.each(e,function(t){CKEDITOR.replace(e[t].id)})}});

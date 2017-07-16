@@ -5,5 +5,5 @@
     following_user_path(user) %>
   <%= link_to t("shared.stats.number_follower",
     number_followers: number_followers(user)),
-    followers_user_path(user) %>
+    followers_user_path(user), class: "followers" %>
 </div>

@@ -2,6 +2,7 @@ en:
   please_login: "Please log in"
   too_big_file: "Maximum file size is 5MB. Please choose a smaller file."
   activation_message: "Account not activated, check your email for activation link!"
+  content_not_blank: " text can't be blank"
   layouts:
     header:
       home: "Home"
