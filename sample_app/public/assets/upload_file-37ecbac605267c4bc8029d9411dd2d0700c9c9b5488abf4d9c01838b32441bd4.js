@@ -1,1 +1,0 @@
-$(document).ready(function(){$("#micropost_picture").change(function(){this.files[0].size/1024/1024>5&&alert(I18n.t("microposts.create.too_big_file"))})});
