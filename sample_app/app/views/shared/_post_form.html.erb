@@ -1,5 +1,5 @@
-<%= form_for post, remote: true do |f| %>
-  <div class="show-errors-create error-explanation"><ul></ul></div>
+<%= form_for post do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
   <div class="field post-form">
     <%= f.text_field :title, placeholder: t("posts.post.title"),
       class: "form-control post-title" %>

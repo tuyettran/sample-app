@@ -4,7 +4,10 @@
     $('.show-errors-create').append('<li><%= message %></li>');
   <% end %>
 <% else %>
-  $('.microposts').prepend('<%= j render('posts/post', post: @post) %>');
+  $('.microposts')
+    .prepend('<%= escape_javascript(render('posts/post', post: @post, comment: @comments)) %>');
   $('.show-errors-create').html('');
   $('.post-title').val('');
+  $('.post-content').val('');
+  CKEDITOR.instances['cke_1_contents'].setData('');
 <% end %>

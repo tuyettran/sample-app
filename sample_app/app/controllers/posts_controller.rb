@@ -5,16 +5,14 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build post_params
+    @comment = Comment.new
     if @post.save
-      respond_to do |format|
-        format.html
-        format.js
-      end
+      flash[:success] = t ".micropost_created"
+      redirect_to request.referrer || root_url
     else
-      respond_to do |format|
-        format.html{redirect_to :back}
-        format.js{}
-      end
+      @feed_items = current_user.posts.order_desc
+        .paginate page: params[:page], per_page: Settings.per_page
+      render "static_pages/home"
     end
   end
 
